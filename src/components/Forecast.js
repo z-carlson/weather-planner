@@ -1,9 +1,13 @@
 import React from "react";
+import styles from './Forecast.module.css';
+
+import Daily from './Daily';
 
 function Forecast() {
   return (
-    <div>
-      weather: it's night
+    <div className={styles.wrapper}>
+      <Daily />
+      
     </div>
   )
 }
