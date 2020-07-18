@@ -2,11 +2,13 @@ import React from "react";
 import styles from './Forecast.module.css';
 
 import Daily from './Daily';
+import Hourly from './Hourly';
 
-function Forecast() {
+function Forecast({ forecast, hourlyForecast }) {
   return (
     <div className={styles.wrapper}>
-      <Daily />
+      <Daily forecast={forecast}/>
+      <Hourly hourlyForecast={hourlyForecast} />
       
     </div>
   )

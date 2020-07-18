@@ -6,56 +6,40 @@ import Storms from '../assets/Storms.svg';
 import Rain from '../assets/Rain.svg'
 
 
-const forecasts = [{
-    icon: Sunny,  
-    weather: "sunny", 
-    temp: "78"
-  },
-  {
-    icon: PartlyCloudy,
-    weather: "cloudy", 
-    temp: "78"
-  },
-  {
-    icon: PartlyCloudy,
-    weather: "partly cloudy", 
-    temp: "78"
-  },
-  {
-    icon: Storms,
-    weather: "chance of storms", 
-    temp: "78"
-  },
-  {
-    icon: Sunny,  
-    weather: "sunny", 
-    temp: "78"
-  },
-  {
-    icon: Sunny,  
-    weather: "sunny", 
-    temp: "78"
-  },
-  {
-    icon: Sunny,  
-    weather: "sunny", 
-    temp: "78"
-  }, ]
+
+function Daily({ forecast }) {
 
 
-function Daily() {
+  function getIcon(weather) {
+    switch (weather) {
+      case "Mostly Sunny":
+        return Sunny;
+      case "Chance Showers And Thunderstorms then Mostly Sunny":
+        return Storms;
+      case "Chance Showers And Thunderstorms":
+        return Rain;
+      default:
+        console.log("missing icon")
+    }
+  }
 
   return (
-    <div className={styles.wrapper}>
-      {forecasts.map(forecast => {
+      <div className={styles.wrapper}>
+      {forecast
+        .filter(forecast => forecast.name && !forecast.name.toLowerCase().includes("night"))
+        .map(forecast => {
         return (
         <div className={styles.forecastCard}>
-          <img className={styles.icon} src={`${forecast.icon}`} alt=""/>
-          <p className={styles.temp}>{forecast.temp}</p>
-          <p className={styles.weather}>{forecast.weather}</p>
+          <div className={styles.day}>
+            <p>{forecast.name}</p>
+          </div>
+          <img className={styles.icon} src={`${getIcon(forecast.shortForecast)}`} alt=""/>
+          <p className={styles.temp}>{forecast.temperature}</p>
+          <p className={styles.shortForecast}>{forecast.shortForecast}</p>
         </div>
         )
-      })}
+      })
+      }
     </div>
   )
 }

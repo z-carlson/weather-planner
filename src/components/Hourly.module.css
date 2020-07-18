@@ -1,0 +1,53 @@
+.wrapper {
+  height: 25rem;
+  overflow-y: scroll;
+  border: 1px solid var(--black);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.2rem;
+  margin-top: 1rem;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.dateHeader {
+  background: var(--black);
+  color: var(--background);
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 0.1rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+.hour {
+  background: #f2f2f2;
+  color: black;
+  font-size: .8rem;
+  margin-top: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+.hour.good {
+  background: var(--primary-color);
+
+}
+
+.hour.bad {
+  background: var(--tertiary);
+
+}
+
+.hour.maybe {
+  background: var(--light);
+
+}

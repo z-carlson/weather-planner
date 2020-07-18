@@ -4,3 +4,8 @@ main {
   align-items: center;
   background: var(--light);
 }
+
+footer {
+  background: var(--black);
+  height: 3rem;
+}

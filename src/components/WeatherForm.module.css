@@ -6,28 +6,37 @@
   column-gap: 2em;
   margin-top: 2em;
   padding: 1rem;
-  height: 12rem;
   width: 80%;
 }
 
 .weatherForm div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 label, legend {
   font-weight: 600;
 }
 
+select {
+  margin-bottom: 1.5rem;
+}
+
 fieldset {
   display: flex;
   flex-direction: column;
+  padding-top: 1rem;
+  padding-right: 3rem;
+}
+
+fieldset input {
+  margin-bottom: 1rem;
 }
 
 
 
-#submitButton {
+.submitButton, .locationButton {
   background: var(--primary-color);
   color: white;
   width: 122px;
@@ -36,4 +45,5 @@ fieldset {
   border: none;
   box-shadow: 2px 2px 5px 0px var(--paragraph);
   align-self: center;
+  margin-bottom: 2rem;
 }

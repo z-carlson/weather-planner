@@ -1,20 +1,31 @@
 import React, { Fragment, useState } from 'react';
 import styles from './WeatherForm.module.css'
 
-function WeatherForm() {
+function WeatherForm(props) {
   const [min, setMin] = useState('');
   const [max, setMax] = useState('');
 
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    
+    props.getForecast();
 
+  }
 
   return (
     <Fragment>
-      <form className={styles.weatherForm}>
+      <form className={styles.weatherForm} onSubmit={handleSubmit}>
         <div>
           <div>
-        <label htmlFor="location">Location</label>
-        <input type="text" placeholder="Enter zipcode" id="location" name="location"></input>
+          <label htmlFor="duration">Duration</label>
+          <select name="duration" id="duration"> 
+            <option value="0.5">30 Mins</option>
+            <option value="1">1 Hour</option>
+            <option value="2">2 Hours</option>
+            <option value="3">3 Hours</option>
+            <option value="4">4 Hours</option>
+          </select>
           </div>
           <div>
          <label htmlFor="desired">Desired Weather</label>
@@ -38,19 +49,17 @@ function WeatherForm() {
               setMax(e.target.value)
             }}></input>
           </fieldset>
-          <div>
-          <label htmlFor="duration">Duration</label>
-          <select name="duration" id="duration"> 
-            <option value="0.5">30 Mins</option>
-            <option value="1">1 Hour</option>
-            <option value="2">2 Hours</option>
-            <option value="3">3 Hours</option>
-            <option value="4">4 Hours</option>
-          </select>
-          </div>
         </div>
         <div>
-          <input id={styles.submitButton} type="submit" value="Schedule"/>
+          <div>
+            <button type="button" className={styles.locationButton} onClick={props.getLocation}>Get My Location</button>
+        {/* <label htmlFor="location">Location</label>
+        <input type="text" placeholder="Enter zipcode" id="location" name="location"></input> */}
+          </div>
+          {(props.location.length > 1) &&
+            <button className={styles.submitButton} type="submit">Schedule</button>
+          }
+          
         </div>
      </form>
     </Fragment>
