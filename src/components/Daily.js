@@ -11,14 +11,17 @@ function Daily({ forecast }) {
 
 
   function getIcon(weather) {
-    switch (weather) {
-      case "Mostly Sunny":
+    switch (weather.toLowerCase()) {
+      case "sunny":
         return Sunny;
-      case "Chance Showers And Thunderstorms then Mostly Sunny":
+      case "mostly sunny":
+        return Sunny;
+      case "chance showers and thunderstorms":
         return Storms;
-      case "Chance Showers And Thunderstorms":
-        return Rain;
+      case "chance showers and thunderstorms then showers and thunderstorms likely":
+          return Storms;
       default:
+        console.log(weather.toLowerCase());
         console.log("missing icon")
     }
   }

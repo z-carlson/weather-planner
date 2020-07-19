@@ -1,3 +1,12 @@
+TODO: 
+- add hover card for each hour data
+- refactor how hours are added to the page
+- correct icons for each possible short forecast
+- connect form data to scheduler
+- clean up styles
+- add mobile/small screen styles
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
