@@ -20,18 +20,17 @@
 .dateHeader {
   background: var(--black);
   color: var(--background);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.1rem 0;
   width: 100%;
   text-align: center;
 }
 
-
 .hour {
   background: #f2f2f2;
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 2px;
   width: 100%;
   text-align: center;
@@ -40,50 +39,68 @@
 .good {
   background: var(--primary-color);
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 2px;
   width: 100%;
   text-align: center;
+}
+
+.goodNight {
+  background: var(--primary-color);
+  color: black;
+  font-size: 0.8rem;
+  margin-top: 2px;
+  width: 100%;
+  text-align: center;
+  filter: brightness(0.4);
 }
 
 .bad {
   background: var(--tertiary);
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 2px;
   width: 100%;
   text-align: center;
+}
 
+.badNight {
+  background: var(--tertiary);
+  color: black;
+  font-size: 0.8rem;
+  margin-top: 2px;
+  width: 100%;
+  text-align: center;
+  filter: brightness(0.4);
 }
 
 .hour.maybe {
   background: var(--light);
-  
 }
 
 .night {
   background: #f2f2f2;
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 2px;
   width: 100%;
   text-align: center;
 }
 
-
 .past {
   background: repeating-linear-gradient(
-  45deg,
-  rgba(200, 200, 200,0.3),
-  rgba(200, 200, 200,0.3) 3px,
-  rgba(100, 100, 100,0.3) 3px,
-  rgba(100, 100, 100,0.3) 6px
-);
+    45deg,
+    rgba(200, 200, 200, 0.3),
+    rgba(200, 200, 200, 0.3) 3px,
+    rgba(100, 100, 100, 0.3) 3px,
+    rgba(100, 100, 100, 0.3) 6px
+  );
   color: black;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 2px;
   width: 100%;
   text-align: center;
+  filter: brightness(0.5);
 }
 
 .hover {
