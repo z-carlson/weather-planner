@@ -8,6 +8,8 @@ function App() {
   const [location, setLocation] = useState([]);
   const [forecast, setForecast] = useState([{}]);
   const [hourlyForecast, setHourlyForecast] = useState([{}]);
+  const [min, setMin] = useState("60");
+  const [max, setMax] = useState("80");
 
   function getForecast() {
     console.log("getting forecast!");
@@ -70,8 +72,17 @@ function App() {
           getLocation={getLocation}
           getForecast={getForecast}
           location={location}
+          setMax={setMax}
+          setMin={setMin}
+          max={max}
+          min={min}
         />
-        <Forecast forecast={forecast} hourlyForecast={hourlyForecast} />
+        <Forecast
+          forecast={forecast}
+          hourlyForecast={hourlyForecast}
+          max={max}
+          min={min}
+        />
       </main>
       <footer />
     </Fragment>

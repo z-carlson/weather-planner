@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import styles from "./Hourly.module.css";
 
-function Hourly({ hourlyForecast }) {
+function Hourly({ hourlyForecast, min, max }) {
   let today = new Date();
   let now = today.getHours();
 
@@ -28,15 +28,16 @@ function Hourly({ hourlyForecast }) {
     });
   }
 
-  function getClassName(forecastData) {
+  function getClassName(forecastData, min, max) {
+    console.log(min, max);
     if (forecastData.isDaytime === false) {
-      if (forecastData.temperature >= 80 || forecastData.temperature <= 60) {
+      if (forecastData.temperature >= max || forecastData.temperature <= min) {
         return styles.badNight;
       } else {
         return styles.goodNight;
       }
     } else {
-      if (forecastData.temperature >= 80 || forecastData.temperature <= 60) {
+      if (forecastData.temperature >= max || forecastData.temperature <= min) {
         return styles.bad;
       } else {
         return styles.good;
@@ -60,7 +61,7 @@ function Hourly({ hourlyForecast }) {
             let forecastHour = time.getHours();
             return (
               <Fragment>
-                <div key={i} className={getClassName(hour)}>
+                <div key={i} className={getClassName(hour, min, max)}>
                   <p>
                     {forecastHour > 12
                       ? forecastHour - 12 + " pm"
@@ -87,7 +88,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"
@@ -109,7 +110,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"
@@ -131,7 +132,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"
@@ -153,7 +154,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"
@@ -175,7 +176,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"
@@ -197,7 +198,7 @@ function Hourly({ hourlyForecast }) {
             let time = new Date(hour.startTime);
             let forecastHour = time.getHours();
             return (
-              <div className={getClassName(hour)}>
+              <div className={getClassName(hour, min, max)}>
                 <p>
                   {forecastHour > 12
                     ? forecastHour - 12 + " pm"

@@ -15,7 +15,18 @@
   justify-content: flex-start;
 }
 
-label, legend {
+.weatherForm div h5 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.weatherForm div p {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+label,
+legend {
   font-weight: 600;
 }
 
@@ -34,9 +45,8 @@ fieldset input {
   margin-bottom: 1rem;
 }
 
-
-
-.submitButton, .locationButton {
+.submitButton,
+.locationButton {
   background: var(--primary-color);
   color: white;
   width: 122px;
@@ -44,6 +54,6 @@ fieldset input {
   font-weight: 600;
   border: none;
   box-shadow: 2px 2px 5px 0px var(--paragraph);
-  align-self: center;
-  margin-bottom: 2rem;
+  align-self: flex-start;
+  margin-bottom: 0;
 }
