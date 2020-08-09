@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Daily.module.css";
 import { ReactComponent as Sunny } from "../assets/Sunny.svg";
 import { ReactComponent as PartlyCloudy } from "../assets/PartlyCloudy.svg";
@@ -28,9 +28,9 @@ function Daily({ forecast }) {
           (forecast) =>
             forecast.name && !forecast.name.toLowerCase().includes("night")
         )
-        .map((forecast) => {
+        .map((forecast, i) => {
           return (
-            <div className={styles.forecastCard}>
+            <div className={styles.forecastCard} key={i}>
               <div className={styles.day}>
                 <p>{forecast.name}</p>
               </div>

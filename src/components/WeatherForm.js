@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import styles from "./WeatherForm.module.css";
 
 function WeatherForm(props) {

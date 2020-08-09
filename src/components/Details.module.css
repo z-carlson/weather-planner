@@ -1,0 +1,15 @@
+.tip {
+  position: absolute;
+  background: white;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.detailsForecast {
+  font-weight: 600;
+}
+
+.detailsTemp {
+  font-size: 1.5rem;
+  margin: 0;
+}
