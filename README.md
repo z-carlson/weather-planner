@@ -1,3 +1,5 @@
+# Weather Planner Application
+
 This was a practice project to work on some React concepts (such as lifting state up, working with simple form input), experiment with CSS Modules, and to try out the weather.gov API. I also used this project as an opporunity to practice using Figma to create a simple design system.
 
 ## Purpose
